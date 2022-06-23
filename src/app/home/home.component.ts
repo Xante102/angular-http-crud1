@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  goDetails(itemID:any){
-    this.router.navigate(['details/'+itemID] )
+  details(id:any){
+    this.router.navigate(['details/' + id] )
   }
 
 

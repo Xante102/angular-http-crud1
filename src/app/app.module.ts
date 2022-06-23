@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
 import { SuccessComponent } from './success/success.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SuccessComponent } from './success/success.component';
     AboutComponent,
     DetailsComponent,
     ContactComponent,
-    SuccessComponent
+    SuccessComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

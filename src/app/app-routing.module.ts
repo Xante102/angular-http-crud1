@@ -5,6 +5,8 @@ import { AboutComponent } from './about/about.component';
 import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
 import { SuccessComponent } from './success/success.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+
 
 const routes: Routes = [
   {path: "" ,
@@ -15,6 +17,8 @@ pathMatch: "full"},
 {path: "details/:id", component: DetailsComponent},
 {path: "contact", component: ContactComponent},
 {path: "success", component: SuccessComponent},
+{path: "cart", component: ShoppingCartComponent},
+
 ];
 
 @NgModule({

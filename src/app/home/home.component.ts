@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   details(id:any){
-    this.router.navigate(['details/' + id] )
+    this.router.navigate( ['details/' + id] )
   }
 
 

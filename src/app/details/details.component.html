@@ -1,0 +1,104 @@
+<div>
+  <mat-grid-list cols="2" rowHeight="40rem">
+    <mat-grid-tile>
+      <mat-card>
+        <img
+          class="h-full w-full object-cover mb-10 rounded-md"
+          src="{{ product.imageUrl }}"
+        />
+        <div class="border-4 p-6 rounded-md">
+          <mat-card-title>{{ product.name }}</mat-card-title>
+          <p class="w-full">
+            {{ product.description }}
+          </p>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="w-full flex flex-col">
+        <div class="text-center mb-24">
+          <p class="text-3xl font-semibold">Price</p>
+          <p class="font-semibold">${{ product.price }}</p>
+          <div class="mt-24">
+            <mat-form-field appearance="fill">
+              <mat-label>Quantity</mat-label>
+              <mat-select>
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="5">5</mat-option>
+                <mat-option value="6">6</mat-option>
+                <mat-option value="7">7</mat-option>
+                <mat-option value="8">8</mat-option>
+                <mat-option value="9">9</mat-option>
+                <mat-option value="10">10</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="success()"
+            class="w-24"
+          >
+            Order Now
+          </button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <div
+      style="
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <h4>Price</h4>
+      {{ product.price }}
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <div
+      style="
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <h4>Quantity</h4>
+      <form action="">
+        <mat-form-field appearance="standard">
+          <input matInput placeholder="Placeholder" type="number" />
+        </mat-form-field>
+      </form>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="3" [rowspan]="1">
+    <div class="title-center" style="padding: 0px 10px">
+      <mat-card-title></mat-card-title>
+
+      <p
+        style="width: 100%; display: flex; flex-direction: column; gap: 0.25rem"
+      >
+        {{ product.description }}
+      </p>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <button mat-button (click)="success()">Order Now!</button>
+  </mat-grid-tile>
+</div>

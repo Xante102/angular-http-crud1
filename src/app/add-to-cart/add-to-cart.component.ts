@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { product } from 'products';
 import {DataService} from '../data.service'
 
+
 @Component({
     selector: 'app-add-to-cart',
     templateUrl: './add-to-cart.component.html',
@@ -60,8 +61,5 @@ export class AddToCartComponent implements OnInit {
             alert('Cart updated successfully');
         },
         })
-
-
-
     }
 }

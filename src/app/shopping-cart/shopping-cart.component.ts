@@ -9,6 +9,7 @@ export class ShoppingCartComponent implements OnInit {
 
   constructor() { }
    cart !: any[]
+   total:number = 0;
 
   ngOnInit(): void {
    this.cart = this.getCartItems()
@@ -34,5 +35,12 @@ export class ShoppingCartComponent implements OnInit {
     console.log(products);
     this.cart = this.getCartItems()
 }
+
+  totalFunc(sum:number){
+  return this.total += sum ;
+  }
+
+
+
 
 }

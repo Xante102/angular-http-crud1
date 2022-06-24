@@ -18,6 +18,7 @@
         <mat-card-actions>
           <div class="flex justify-center">
             <button mat-raised-button color="primary" (click)="details(product.id)">Buy Meal</button>
+            <app-add-to-cart [product_id]="product.id"></app-add-to-cart>
           </div>
         </mat-card-actions>
       </mat-card></mat-grid-tile

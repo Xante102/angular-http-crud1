@@ -1,57 +1,65 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/api.service';
+import { product } from 'products';
+import {DataService} from '../data.service'
+
 
 @Component({
     selector: 'app-add-to-cart',
     templateUrl: './add-to-cart.component.html',
+    styleUrls: ['./add-to-cart.component.css'],
 })
 export class AddToCartComponent implements OnInit {
-    constructor(private api: ApiService) {}
+    constructor(private api: DataService) {}
 
     @Input() product_id!: number;
-    products = [];
+    products:product[] = [];
 
     ngOnInit(): void {}
 
-    addProduct(product_id: number) {
-        this.api.getProducts().subscribe({
-            next: (resp: []) => {
-                this.products = resp;
-                let currentCart: any[] = [];
+    addProduct(id: number) {
+        this.api.sendGetRequest().subscribe({
+          next: (resp: product[]) => {
+            this.products = resp;
+            let currentCart: any[] = [];
 
-                if (!!localStorage.getItem('cart')) {
-                    currentCart = Array.from(
-                        JSON.parse(localStorage.getItem('cart') as string)
-                    );
-                }
+            // If `cart` is found in localStorage we store it in `currentCart`
+            if (!!localStorage.getItem('cart')) {
+                currentCart = Array.from(
+                    JSON.parse(localStorage.getItem('cart') as string)
+                );
+            }
 
-                currentCart.forEach((product) => {
-                    if (!product.amount) product.amount = 1;
-                });
+            // Search for duplicate cart item
+            let duplicateCartItem: any = currentCart.find(
+                (cartItem: any) => cartItem.id == id
+            );
 
-                let duplicateCartItem: any = currentCart.find(
-                    (cartItm: any) => product_id == cartItm.id
+            // If duplicate cart item is found we increment the amount instead of inserting a new product to the cart
+            if (duplicateCartItem) {
+                duplicateCartItem.amount += 1;
+            } else {
+                // Finding the product being added to the cart
+                let product: any = this.products.find(
+                    (product: any) => product.id == id
                 );
 
-                if (duplicateCartItem) {
-                    duplicateCartItem.amount += 1;
-                } else {
-                    let product: any = this.products.find(
-                        (product: any) => product.id == product_id
-                    );
+                // Add the product found to the cart with `amount` set to `1`
+                currentCart.push({
+                    id: product.id,
+                    name: product.name,
+                    description: product.description,
+                    price: product.price,
+                    imageUrl: product.imageUrl,
+                    amount: 1,
+                });
+            }
 
-                    currentCart.push({
-                        id: product.id,
-                        name: product.name,
-                        description: product.description,
-                        price: product.price,
-                        imageUrl: product.imageUrl,
-                        amount: 1,
-                    });
-                }
+            // Updating the cart in localStorage with the new information
+            localStorage.setItem('cart', JSON.stringify(currentCart));
 
-                localStorage.setItem('cart', JSON.stringify(currentCart));
-            },
-        });
+            //* Cart Notification function goes here
+            alert('Cart updated successfully');
+        },
+        })
     }
 }

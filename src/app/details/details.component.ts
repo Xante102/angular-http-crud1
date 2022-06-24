@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { product } from 'products';
 import { DataService } from '../data.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class DetailsComponent implements OnInit {
     const routeParams = this.activatedRoute.snapshot.paramMap;
     const id = Number(routeParams.get('id'));
 
-    this.dataService.product(id).subscribe((data: any[]) => {
+    this.dataService.getProduct(id).subscribe((data: product[]) => {
       this.product = data;
     });
   }

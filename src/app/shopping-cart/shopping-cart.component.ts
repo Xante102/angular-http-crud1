@@ -35,5 +35,4 @@ export class ShoppingCartComponent implements OnInit {
     this.cart = this.getCartItems()
 }
 
-
 }

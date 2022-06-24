@@ -20,6 +20,7 @@ import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
 import { SuccessComponent } from './success/success.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     DetailsComponent,
     ContactComponent,
     SuccessComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,

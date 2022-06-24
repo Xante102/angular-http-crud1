@@ -6,10 +6,23 @@
       >
         Products Cart
       </p>
-      <button mat-raised-button color="primary" routerLink="/" >
+      <button mat-raised-button color="primary" routerLink="/">
         <div class="flex items-center space-x-3">
           <div>Continue Shopping</div>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 4H19C19.5523 4 20 4.44771 20 5V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V5C4 4.44772 4.44771 4 5 4ZM2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5ZM12 12C9.23858 12 7 9.31371 7 6H9C9 8.56606 10.6691 10 12 10C13.3309 10 15 8.56606 15 6H17C17 9.31371 14.7614 12 12 12Z" fill="currentColor" /></svg>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M5 4H19C19.5523 4 20 4.44771 20 5V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V5C4 4.44772 4.44771 4 5 4ZM2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5ZM12 12C9.23858 12 7 9.31371 7 6H9C9 8.56606 10.6691 10 12 10C13.3309 10 15 8.56606 15 6H17C17 9.31371 14.7614 12 12 12Z"
+              fill="currentColor"
+            />
+          </svg>
         </div>
       </button>
     </div>
@@ -60,10 +73,11 @@
                   <input
                     type="number"
                     id="quantity"
-                    name=""
+                    name="quantity"
+                    #quantites
                     class="w-20 text-center rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     value="{{ cItem.amount }}"
-                    click=""
+                    (change)="amountChanged($event, cItem.id)"
                   />
 
                   <div class="absolute top-0 right-0">
@@ -108,7 +122,9 @@
                   </svg>
                   <span>In stock</span>
                 </div>
-                <div class="font-medium">${{ cItem.price }}</div>
+                <div class="font-medium" #itemUnitPrices>
+                  {{ cItem.price | currency }}
+                </div>
               </div>
             </div>
           </li>
@@ -117,21 +133,31 @@
 
       <!-- Order summary -->
 
-      <section class="mt-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5">
+      <section
+        class="mt-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5"
+      >
         <p class="text-lg font-medium text-gray-900">Order summary</p>
 
         <dl class="mt-6 space-y-4">
-          <div class="flex items-center justify-between" *ngFor="let cItem of cart">
-            <dt class="text-sm text-gray-600">Subtotal</dt>
-            <dd class="text-sm font-medium text-gray-900">${{cItem.price * cItem.amount}}</dd>
-            <dd style="display:none;">{{totalFunc(cItem.price * cItem.amount)}}</dd>
+          <div
+            class="flex items-center justify-between"
+            *ngFor="let cItem of cart"
+          >
+            <dt class="text-sm text-gray-600">
+              {{ cItem.name }} | x{{ cItem.amount }}
+            </dt>
+            <dd class="text-sm font-medium text-gray-900" #itemPrices>
+              {{ cItem.price * cItem.amount | currency }}
+            </dd>
           </div>
 
           <div
             class="border-t border-gray-200 pt-4 flex items-center justify-between"
           >
             <dt class="text-base font-medium text-gray-900">Order total</dt>
-            <dd class="text-base font-medium text-gray-900" >{{total}}</dd>
+            <dd class="text-base font-medium text-gray-900">
+              {{ total | currency }}
+            </dd>
           </div>
         </dl>
 

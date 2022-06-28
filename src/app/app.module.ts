@@ -21,6 +21,10 @@ import { ContactComponent } from './contact/contact.component';
 import { SuccessComponent } from './success/success.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { MenuComponent } from './menu/menu.component';
+import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditMenuItemComponent } from './edit-menu-item/edit-menu-item.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
     ContactComponent,
     SuccessComponent,
     ShoppingCartComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    MenuComponent,
+    AddMenuItemComponent,
+    EditMenuItemComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,8 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
     MatProgressSpinnerModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

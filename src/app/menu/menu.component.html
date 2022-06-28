@@ -16,30 +16,20 @@
           <img class="h-full w-full mb-5" src="{{ dish.imageUrl }}" alt="" />
           <mat-card-header>
             <mat-card-title>{{ dish.menu_name }}</mat-card-title>
-            <mat-card-subtitle>
-              {{ dish.cost }} $/ {{ dish.menu_size }}
-            </mat-card-subtitle>
           </mat-card-header>
           <p class="text-xs h-24 pl-4 font-medium prose">
-            {{ dish.menu_description }}
+            Cost {{ dish.cost }} $/ {{ dish.menu_size }}
           </p>
         </mat-card-content>
         <mat-card-actions>
           <div class="flex justify-center space-x-10">
-            <button
-              mat-raised-button
-              color="accent"
-              (click)="goToeditDish(dish)"
-            >
-              Edit Dish
-            </button>
 
             <button
               mat-raised-button
-              color="warn"
-              (click)="deleteDish(dish.id)"
+              color="primary"
+              (click)="viewMore(dish.id)"
             >
-              Delete Dish
+              View More
             </button>
 
           </div>

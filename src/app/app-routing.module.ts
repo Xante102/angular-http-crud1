@@ -9,6 +9,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MenuComponent } from './menu/menu.component';
 import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
 import { EditMenuItemComponent } from './edit-menu-item/edit-menu-item.component';
+import { ViewMoreComponent } from './view-more/view-more.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ pathMatch: "full"},
  children:[
   {path:"menu-list",  component: MenuComponent,},
   {path:'add-menu', component:AddMenuItemComponent},
-  {path:'edit-menu', component:EditMenuItemComponent}
+  {path:'edit-menu', component:EditMenuItemComponent},
+  {path:'view-more/:id', component:ViewMoreComponent}
  ]
 },
 

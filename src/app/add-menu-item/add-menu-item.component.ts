@@ -31,7 +31,7 @@ export class AddMenuItemComponent implements OnInit {
       menu_name: new FormControl('',[Validators.required]),
       menu_description: new FormControl('',Validators.required),
       menu_size : new FormControl('',[Validators.required]),
-      imageUrl: new FormControl("https://source.unsplash.com/1600x900/?food", []),
+      imageUrl: new FormControl('https://source.unsplash.com/1600x900/?food', []),
       cost : new FormControl('',[Validators.required])
     })
 
@@ -41,35 +41,12 @@ export class AddMenuItemComponent implements OnInit {
   addToMenu(){
     if(this.menuForm.valid){
 
-      function genMealId(min = 1000, max = 9999) {
-
-        let s4 = Math.floor((1 + Math.random()) * 0x1000).toString(16).substring(1);
-
-          // find diff
-          let difference = max - min;
-
-          // generate random number
-          let rand = Math.random();
-
-          // multiply with difference
-          rand = Math.floor( rand * difference);
-
-          // add with min value
-          rand = rand + min;
-
-          return rand + '-' + s4 ;
-      }
-
-
-      this.menuForm.value.id = genMealId();
-
       this._menuService.addMenuItem(this.menuForm.value).subscribe({
         next: (resp : menu) => {
           this.menuForm.reset();
         },
         error: (err: Error) => {
           alert('Error occurred ')
-          console.log(err);
         },
         complete: () => {
           alert('Menu Item added');

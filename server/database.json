@@ -403,36 +403,36 @@
   ],
   "menus": [
     {
-      "id": 1,
-      "menu_name": "Jerk goat with ackee fried rice",
-      "menu_description": "Charcoal jerked goat over an open flamed on a bed of ChineyJam fried rice lightly",
-      "menu_size": 301,
-      "imageUrl": "https://source.unsplash.com/1600x900/?food",
-      "cost": 1200
-    },
-    {
-      "id": 3,
-      "menu_name": "Goopy dirt Slime",
-      "menu_description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum dolorem tempora commodi aut labore cum maxime temporibus error odit eum id, facere adipisci doloremque a sequi enim, voluptas illo quas.",
-      "menu_size": 2763,
-      "imageUrl": "https://source.unsplash.com/1600x900/?food",
-      "cost": 6563
-    },
-    {
       "id": 4,
-      "menu_name": "Gilbert Blue Earthquake Slippers",
-      "menu_description": "The Ultimate Storm and Earthquake Slippers jbds jbjsdd fmz mcnzm,cm",
-      "menu_size": 2333,
-      "imageUrl": "https://source.unsplash.com/1600x900/?food",
-      "cost": 100000
-    },
-    {
-      "id": "2506-370",
-      "menu_name": "Fried Chicken and red rice",
-      "menu_description": "Some fry chicken",
+      "menu_name": "Fried Chicken and blue rice",
+      "menu_description": "Some fry chicken with blue rice",
       "menu_size": 300,
       "imageUrl": "https://source.unsplash.com/1600x900/?food",
       "cost": 600
+    },
+    {
+      "id": 5,
+      "menu_name": "Fried Chicken and red rice",
+      "menu_description": "Some good chicken with red rice",
+      "menu_size": 300,
+      "imageUrl": "https://source.unsplash.com/1600x900/?food",
+      "cost": 456
+    },
+    {
+      "id": 6,
+      "menu_name": "Fried Chicken and green  rice",
+      "menu_description": "mnhggrfvhjkhjgn",
+      "menu_size": 467,
+      "imageUrl": "https://source.unsplash.com/1600x900/?food",
+      "cost": 64576
+    },
+    {
+      "id": 7,
+      "menu_name": "Fried Chicken and yellow rice",
+      "menu_description": "Fried Chicken and blue riceUafildg dsyzdv cshdz cxjghsjzdv ",
+      "menu_size": 3038,
+      "imageUrl": "https://source.unsplash.com/1600x900/?food",
+      "cost": 6590
     }
   ]
 }

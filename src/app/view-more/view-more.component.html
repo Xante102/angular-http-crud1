@@ -1,0 +1,43 @@
+
+
+
+<div class="p-10">
+  <mat-grid-list cols="4" rowHeight="30rem" gutterSize="2rem">
+    <mat-grid-tile>
+      <mat-card class="mt-10" >
+        <mat-card-content>
+          <img class="h-full w-full mb-5" src="{{ menuItem.imageUrl }}" alt="" />
+          <mat-card-header>
+            <mat-card-title>{{ menuItem.menu_name }}</mat-card-title>
+            <mat-card-subtitle>
+              {{ menuItem.cost }} $/ {{ menuItem.menu_size }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <p class="text-xs h-24 pl-4 font-medium prose">
+            {{ menuItem.menu_description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="flex justify-center space-x-10">
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="goToeditDish(menuItem)"
+            >
+              Edit Dish
+            </button>
+
+            <button
+              mat-raised-button
+              color="warn"
+              (click)="deleteDish(menuItem.id)"
+            >
+              Delete Dish
+            </button>
+
+          </div>
+        </mat-card-actions>
+        </mat-card
+    ></mat-grid-tile>
+  </mat-grid-list>
+</div>

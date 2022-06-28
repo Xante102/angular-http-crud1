@@ -42,15 +42,16 @@ export class EditMenuItemComponent implements OnInit {
 
 editMenuItem(){
   if(this.menuEditForm.valid){
+    let id = this.menuEditForm.value.id;
     this._menuService.editMenuItem(this.menuEditForm.value).subscribe({
       next:(resp:menu) => {
-        console.log('Edited');
+        this.router.navigate(['menu/view-more/' + id])
       },
       error:() =>{
         alert('Error occured')
       },
       complete:() =>{
-        this.router.navigate(['menu/menu-list'])
+        console.log('Edited');
       }
     })
   }

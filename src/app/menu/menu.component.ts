@@ -33,39 +33,9 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  goToeditDish(dish:menu){
-    console.log(JSON.stringify(dish));
 
-    localStorage.setItem('dish', JSON.stringify(<menu[]>[{
-      id : dish.id,
-      menu_name: dish.menu_name,
-      menu_description: dish.menu_description,
-      menu_size:dish.menu_size,
-      imageUrl:"https://source.unsplash.com/1600x900/?food",
-      cost: dish.cost
-    }]));
-
-    this.router.navigate(['menu/edit-menu'])
-
-
-  }
-
-
-
-
-
-  deleteDish(item:number){
-    this._menuService.deleteMenuItem(item).subscribe({
-      next:(resp: menu) => {
-       alert('Product Deleted');
-      },
-      error: () => {
-        alert('Error occured deleting item');
-      },
-      complete: () => {
-        this.getMenu();
-      },
-    })
+  viewMore(item:number){
+  this.router.navigate(['menu/view-more/'+ item])
   }
 
 

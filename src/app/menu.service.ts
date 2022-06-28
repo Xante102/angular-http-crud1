@@ -26,5 +26,9 @@ export class MenuService {
     return this._httpClient.delete<menu>(`${this.REST_API_SERVER}/${id}`);
   }
 
+  public getMenuItem(id:number){
+    return this._httpClient.get<menu>(`${this.REST_API_SERVER}/${id}`);
+  }
+
 
 }

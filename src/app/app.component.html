@@ -1,20 +1,25 @@
-<mat-toolbar color="primary">
-  <div class="flex items-center justify-between w-[50rem]">
-    <div class="flex items-center space-x-4">
-    <img src="https://seeklogo.com/images/F/food-chief-spoon-logo-778E6F7075-seeklogo.com.png" class="w-16" alt="">
-    <p class=" font-bold text-xl">Amber Eateries</p>
+
+<div class="cont">
+  <mat-toolbar color="primary">
+    <div class="flex items-center justify-between w-[50rem]">
+      <div class="flex items-center space-x-4">
+      <img src="https://seeklogo.com/images/F/food-chief-spoon-logo-778E6F7075-seeklogo.com.png" class="w-16" alt="">
+      <p class=" font-bold text-xl">Amber Eateries</p>
+      </div>
+
+    <div>
+      <button mat-button routerLink="/">Home</button>
+      <button mat-button routerLink="/about">About</button>
+      <button mat-button routerLink="/contact">Contact Us</button>
+      <button mat-button routerLink="/cart">Cart</button>
+      <button mat-button routerLink="/menu/menu-list">Menu</button>
     </div>
 
-  <div>
-    <button mat-button routerLink="/">Home</button>
-    <button mat-button routerLink="/about">About</button>
-    <button mat-button routerLink="/contact">Contact Us</button>
-    <button mat-button routerLink="/cart">Cart</button>
-    <button mat-button routerLink="/menu/menu-list">Menu</button>
-  </div>
-
-  </div>
-</mat-toolbar>
+    </div>
+  </mat-toolbar>
 
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+</div>

@@ -26,6 +26,7 @@ import { AddMenuItemComponent } from './add-menu-item/add-menu-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditMenuItemComponent } from './edit-menu-item/edit-menu-item.component';
 import { ViewMoreComponent } from './view-more/view-more.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ViewMoreComponent } from './view-more/view-more.component';
     MenuComponent,
     AddMenuItemComponent,
     EditMenuItemComponent,
-    ViewMoreComponent
+    ViewMoreComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
